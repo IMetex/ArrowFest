@@ -9,9 +9,11 @@ public class GateSubtract : MonoBehaviour
     {
         if (collision.gameObject.GetComponentInParent<Player>())
         {
-            if (arrows > collision.gameObject.GetComponentInParent<Player>().transform.childCount)
+            int playerChildCount = collision.gameObject.GetComponentInParent<Player>().transform.childCount;
+
+            if (arrows > playerChildCount)
             {
-                arrows = collision.gameObject.GetComponentInParent<Player>().transform.childCount;
+                arrows = playerChildCount;
             }
 
             for (int i = 0; i < arrows; i++)
